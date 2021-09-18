@@ -1,0 +1,52 @@
+
+To Subscribe the channel
+SUBSCRIBE channel [channel_name]
+To Publish to the channel
+PUBLISH channel [message]
+e.g. 
+127.0.0.1:6379> SUBSCRIBE devsnest
+127.0.0.1:6379> PUBLISH devsnest hii                                                                                        Videos
+(integer) 1                                                                                                                 anaconda3        
+127.0.0.1:6379> PUBLISH devsnest Hello                                a4692b}.TM.blf                                        ansel
+(integer) 1                                                           a4692b}.TMContainer00000000000000000001.regtrans-ms   eclipse
+127.0.0.1:6379>     
+
+Output
+
+Reading messages... (press Ctrl-C to quit)
+1) "subscribe"
+2) "devsnest"
+3) (integer) 1
+1) "message"
+2) "devsnest"
+3) "hii"
+1) "message"
+2) "devsnest"
+3) "Hello"
+
+
+Basic redis commands
+SET key value
+GET key
+ttl key
+KEYS *
+DEL key
+FLUSHALL
+EXISTS key
+expire key time
+setex key time value
+For Arrays
+LPUSH array value
+RPUSH array value
+LRANGE array start stop
+LPOP array
+RPOP array
+For Sets
+SADD myset value
+SMEMBERS myset
+For Object/Hash
+HSET key field value
+HGET key field
+HGETALL key
+HDEL key field
+HEXISTS key field
