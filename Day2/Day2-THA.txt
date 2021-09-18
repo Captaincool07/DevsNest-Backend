@@ -1,0 +1,32 @@
+postgres=# create database dev;
+postgres=# \c dev
+You are now connected to database "dev" as user "postgres".
+dev=# create table company(
+id int not null,
+name char[50],  
+age int,
+address text);
+CREATE TABLE
+dev=# \d
+          List of relations
+ Schema |  Name   | Type  |  Owner
+--------+---------+-------+----------
+ public | company | table | postgres
+(1 row)
+
+dev=# \d company
+                  Table "public.company"
+ Column  |      Type      | Collation | Nullable | Default 
+---------+----------------+-----------+----------+---------
+ id      | integer        |           | not null |
+ name    | character(1)[] |           |          |
+ age     | integer        |           |          |
+ address | text           |           |          |
+
+dev=# create schema mysc
+dev-# create table mysc.company;
+ERROR:  syntax error at or near ";"
+LINE 2: create table mysc.company;
+                                 ^
+dev=# create table mysc.company
+dev-# drop schema mysc casecade
