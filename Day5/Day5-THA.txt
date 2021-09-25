@@ -1,0 +1,61 @@
+NodeJS
+Commands in node REPL (Interactive mode/read-evaluate-print loop). Run REPL using
+
+> var fs = require("fs")
+undefined
+> fs.writeFileSync("Day_5/hello.txt", "Hello JS", (err) => {
+... if(err) {
+..... console.log(err);
+..... }
+... });
+undefined
+> fs.appendFileSync("Day_5hello.txt", " How are you");
+undefined
+> fs.appendFileSync("Day_5/hello.txt", " How are you");
+undefined
+> fs.appendFileSync("Day_5/hello.txt", "How are you");
+undefined
+> fs.readFileSync("Day_5/hello.txt");
+<Buffer 48 65 6c 6c 6f 20 4a 53 20 48 6f 77 20 61 72 65 20 79 6f 75 48 6f 77 20 61 72 65 20 79 6f 75>   
+> fs.readFileSync("Day_5/hello.txt", "utf-8");      
+'Hello JS How are youHow are you'
+> var data =fs.readFileSync("Day_5/hello.txt", "utf-8");
+undefined
+> console.log(data)
+Hello JS How are youHow are you
+undefined
+> fs.renameSync("Day_5/hello.txt", "Day_5/hello2.txt");
+undefined
+> fs.unlinkSync("Day_5/hello2.txt")
+undefined
+
+> fs.unlinkSync("Day_5hello.txt")
+undefined
+> fs.rmdirSync("Day_5")    
+undefined
+###############################
+Creating our own modules that work with require:
+file require.js 
+class Test {
+   print(){
+       console.log("I am inisde require");
+   } 
+}
+class Test1{
+    print(){
+        console.log(">>");
+    } 
+}
+
+module.exports = Test;
+
+//index.js
+
+var test =require("./require");
+
+var obj = new Test();
+console.log(obj.print());
+
+
+// to Run
+node index.js
